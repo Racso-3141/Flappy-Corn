@@ -9,10 +9,10 @@ HEIGHT = 600  # height
 # background
 background = Actor('foellinger')  # import image
 
-# bird
-bird = Actor('corn')  # import image
-bird.x = 50           # x coordinate of bird
-bird.y = HEIGHT/2     # y coordinate of bird
+# corn
+corn = Actor('corn')  # import image
+corn.x = 50           # x coordinate of corn
+corn.y = HEIGHT/2     # y coordinate of corn
 
 # top bar
 bar_up = Actor('bar_up')    # import image
@@ -35,15 +35,15 @@ def draw():
     background.draw()  # background
     bar_up.draw()         # top bar
     bar_down.draw()         # bottom bar
-    bird.draw()        # bird
+    corn.draw()        # corn
     screen.draw.text(str(score), (30, 30),
                      fontsize=50, color='green')
 
 def update():  # update scene
     global score,speed
 
-    # bird fall
-    bird.y = bird.y + 2  # bird falls defaultly by increasing y coordinate
+    # corn fall
+    corn.y = corn.y + 2  # corn falls defaultly by increasing y coordinate
 
     # move bar to left
     bar_up.x = bar_up.x - speed   
@@ -65,21 +65,21 @@ def update():  # update scene
         if (score % 5 == 0): # as long as score 5 more points; game speed increases
             speed = speed + 1
 
-    # bird hit the bar; Game over.
-    if bird.colliderect(bar_up) or bird.colliderect(bar_down) or bird.y < 0 or bird.y > HEIGHT:
+    # corn hit the bar; Game over.
+    if corn.colliderect(bar_up) or corn.colliderect(bar_down) or corn.y < 0 or corn.y > HEIGHT:
 
         # reset all parameters
         score = 0
         speed = 1
-        bird.x = 50            
-        bird.y = HEIGHT/2      
+        corn.x = 50            
+        corn.y = HEIGHT/2      
         bar_up.x = WIDTH       
         bar_up.y = 0           
         bar_down.x = WIDTH     
         bar_down.y = 600       
 
-# when mouse click; bird flaps
+# when mouse click; corn flaps
 def on_mouse_down():  # 
-    bird.y = bird.y - 100  
+    corn.y = corn.y - 100  
 
 pgzrun.go()   # game start
