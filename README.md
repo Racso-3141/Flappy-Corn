@@ -1,1 +1,1 @@
-# Flappy-Bird-UIUC-style-Pygame
+# Flappy-Corn
