@@ -17,18 +17,18 @@ corn.y = HEIGHT/2     # y coordinate of corn
 # top bar
 bar_up = Actor('bar_up')    # import image
 bar_up.x = 300              # top bar x coordinate
-bar_up.y = 0                # top bar y coordinate
+bar_up.y = 30               # top bar y coordinate
 
 # bottom bar
 bar_down = Actor('bar_down')    # import image
 bar_down.x = 300                # bottom bar x coordinate
-bar_down.y = 600                # bottom bar y coordinate
+bar_down.y = 570                # bottom bar y coordinate
 
 # score
 score = 0     
 
 # speed
-speed = 1     
+speed = 3     
 
 # draw scene
 def draw():   
@@ -55,10 +55,10 @@ def update():  # update scene
         # generate bar randomly
         bar_up.x = WIDTH
         bar_down.x = WIDTH
-        bar_up.y = random.randint(-200, 200)
+        bar_up.y = random.randint(-150, 150)
 
         # fix the space between top and bottom bars
-        bar_down.y = 600 + bar_up.y   
+        bar_down.y = 560 + bar_up.y   
 
         # update score
         score = score + 1    # increase score
@@ -70,7 +70,7 @@ def update():  # update scene
 
         # reset all parameters
         score = 0
-        speed = 1
+        speed = 3
         corn.x = 50            
         corn.y = HEIGHT/2      
         bar_up.x = WIDTH       
