@@ -28,7 +28,7 @@ bar_down.y = 570                # bottom bar y coordinate
 score = 0     
 
 # speed
-speed = 3     
+speed = 2     
 
 # draw scene
 def draw():   
